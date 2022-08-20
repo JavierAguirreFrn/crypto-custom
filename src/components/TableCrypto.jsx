@@ -3,9 +3,29 @@ import { RowCrypto } from './RowCrypto'
 
 export const TableCrypto = ({coin, search}) => {
     console.log("TheCoinFromTableCrypto", coin)
+    console.log("thesearch", search)
 
-    let filteredSearch = coin.filter((elemt) => elemt.name.toLowerCase().includes(search.toLowerCase()))
+
+
+    let filteredSearch
+    if(coin!== undefined && search !== undefined){
+
+       filteredSearch = coin.filter((elemt) => 
+      elemt.name.toLowerCase().includes(search)
+      )
+    }
+
+
+    if(filteredSearch !== undefined){
     console.log("elfilteredSearch", filteredSearch)
+    }
+
+    // let filteredSearch = coin.filter((elemt) => 
+    // elemt.name.toLowerCase().includes(search.toLowerCase())
+    // )
+
+
+    // console.log("elfilteredSearch", filteredSearch)
 
     let arrayHeadersTable = ["#", "Moneda", "Precio Actual", "Cambio 24hrs(%)"]
 
